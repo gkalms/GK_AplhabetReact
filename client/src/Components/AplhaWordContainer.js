@@ -7,14 +7,17 @@ const AlphaWordContainer = () => {
     /* set up state variables to handle changes - added words */
     const [addMoreWords, setAddWord] = useState([]);
 
+    /* Get the alphabet list to populate alphabet dropdown*/
+
+
     const handleWordsSubmit = (name, alphabet) => {
-        const newWord = { name: name, alphabet: alphabet }; /* will read new entry and put in temp variable*/
+        const newWord = { name: name, alphabet: alphabet}; /* will read new entry and put in temp variable*/
         const moreWords = [...addMoreWords] /*bring in state variable*/
         moreWords.push(newWord); /* add new word to temp variable"*/
         setAddWord(moreWords); /* update state - update list/array of words*/
 
         /* Then add new word to database*/
-        fetch("http://localhost:9000/api/alphabet", {
+        fetch("http://localhost:9000/api/alphabet/words", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -37,7 +40,6 @@ const AlphaWordContainer = () => {
                 return response.json();
             })
             .then((wordslist) => {
-                console.log("word list:", wordslist);
                 // call to set state
                 setAddWord(wordslist.data);
             });

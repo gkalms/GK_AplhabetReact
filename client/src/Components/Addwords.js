@@ -31,7 +31,7 @@ const AddWords = (props) => {
 
         <label>
           Alphabet
-        <select name="alphabet" value={FormState.alphabet} onChange={handleChange}></select>
+        <input name="alphabet" value={FormState.alphabet} onChange={handleChange}></input>
         </label>
 
         <button type="submit">

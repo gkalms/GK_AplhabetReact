@@ -73,7 +73,7 @@ router.get("/words/all", async (request, response) => {
 
 
 //Get words by alphabet ID
-router.get("/words/:id", async (request, response) => {
+router.get("/words/:alphabetId", async (request, response) => {
   try {
     const findWordsByAlphabetId = await WordsApi.find({alphabetId: request.params.alphabetId});
     response.json({

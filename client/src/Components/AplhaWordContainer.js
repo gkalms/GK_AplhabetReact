@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { AddWords } from "./Addwords";
 import { ListWords } from "./ListWords";
+import { BrowserRouter as Router, Link, Switch, Route } from "react-router-dom";
 
 const AlphaWordContainer = () => {
     /* set up state variables to handle changes - added words */
@@ -43,10 +44,20 @@ const AlphaWordContainer = () => {
     }, []);
 
     return (
-        <div>
-            <ListWords words={addMoreWords} />
-            <AddWords submit={handleWordsSubmit} />
-        </div>
+        <Router>
+            <div>
+                <Link to="/AddWords">Add words</Link>
+                <Link to="/ListWords">List words</Link>
+                <Switch>
+                    <Route path="/AddWords">
+                        <AddWords submit={handleWordsSubmit} />
+                    </Route>
+                    <Route path="/ListWords">
+                        <ListWords words={addMoreWords} />
+                    </Route>
+                </Switch>
+            </div>
+        </Router >
     );
 };
 

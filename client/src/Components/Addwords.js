@@ -4,7 +4,7 @@ const AddWords = (props) => {
 
   const [FormState, setFormState] = useState({
     name: "",
-    alphabet: ""
+    alphabetName: ""
   })
 
   const handleChange = (e) => {
@@ -16,7 +16,7 @@ const AddWords = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    props.submit(FormState.name, FormState.alphabet);
+    props.submit(FormState.name, FormState.alphabetName);
   }
 
   return (
@@ -31,7 +31,7 @@ const AddWords = (props) => {
 
         <label>
           Alphabet
-        <select name="alphabet" value={FormState.alphabet} onChange={handleChange}></select>
+        <input name="alphabetName" value={FormState.alphabetName} onChange={handleChange}></input>
         </label>
 
         <button type="submit">

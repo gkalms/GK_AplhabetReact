@@ -1,10 +1,8 @@
 // import express
 const express = require("express");
+const router = express.Router();
 const bcrypt = require("bcrypt");
 const UserModel = require("../Models/Usermodel");
-
-// Create a new router to handle internal routes
-const router = express.Router();
 
 //establish session/healthcheck
 router.get("/session/establish", (request, response) => {

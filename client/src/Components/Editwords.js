@@ -1,9 +1,47 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
-const Editwords = () => {
-  return (
-    <h1>Hello Edit word</h1>
-    );
+const EditWordsForm = (props) => {
+  const [formState, setFormState] = useState({
+    name: "",
+    alphabetName: ""
+  });
+
+  useEffect(() => {
+    setFormState(props.word);
+  }, [props.word]);
+
+  const handleChange = (e) => {
+    const newState = {...formState }
+    newState[e.target.name] = e.target.value;
+    setFormState(newState);
   }
 
-  export {Editwords}
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    props.submit(formState);
+  };
+
+    return (
+      <div>
+        <h2>Update word</h2>
+        <form onSubmit={handleSubmit}>
+
+          <label>
+            Name
+        <input name="name" value={formState.name} onChange={handleChange}></input>
+          </label>
+
+          <label>
+            Alphabet
+        <input name="alphabetName" value={formState.alphabetName} onChange={handleChange}></input>
+          </label>
+
+          <button type="submit">
+            Update word
+      </button>
+        </form>
+      </div>
+    );
+  };
+
+  export { EditWordsForm };

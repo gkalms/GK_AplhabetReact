@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
-const EditWordsForm = (props) => {
+
+const EditWords = (props) => {
   const [formState, setFormState] = useState({
     name: "",
     alphabetName: ""
@@ -37,11 +38,11 @@ const EditWordsForm = (props) => {
           </label>
 
           <button type="submit">
-            Update word
+            Update
       </button>
         </form>
       </div>
     );
   };
 
-  export { EditWordsForm };
+  export { EditWords };

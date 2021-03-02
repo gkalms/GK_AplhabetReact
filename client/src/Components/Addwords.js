@@ -22,6 +22,7 @@ const AddWords = (props) => {
   return (
     <div>
       <h2>Add word</h2>
+      
       <form onSubmit={handleSubmit}>
 
         <label>
@@ -35,7 +36,7 @@ const AddWords = (props) => {
         </label>
 
         <button type="submit">
-          Submit word
+          Submit
       </button>
       </form>
     </div>

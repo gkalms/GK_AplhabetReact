@@ -92,7 +92,7 @@ const AlphaWordContainer = () => {
         <Router>
             <div>
                 <ListWords words={wordslist} handleClick={handleWordClick} />
-                <Link to="/ListWords">List</Link>
+                {/* <Link to="/ListWords">List</Link> */}
                 <Link to="/AddWords">Add</Link>
                 <Link to="/EditWords">Edit</Link>
                 <Link to="/DeleteWord">Delete</Link>
@@ -100,9 +100,9 @@ const AlphaWordContainer = () => {
                     <Route path="/AddWords">
                         <AddWords submit={handleWordsSubmit} />
                     </Route>
-                    <Route path="/ListWords">
+                    {/* <Route path="/ListWords">
                         <ListWords words={wordslist} />
-                    </Route>
+                    </Route> */}
                     <Route path="/EditWords">
                         <EditWords submit={handleEditWord} word={updateWord} />
                     </Route>

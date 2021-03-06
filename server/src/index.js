@@ -5,14 +5,9 @@ const cors = require("cors");
 
 // Import routers
 const alphabetRouter = require("./Routes/AlphaRoute");
-const userRouter = require("./Routes/UserRoute");
-
-// seeding alphabet and word data
-const AlphabetApi = require("./Models/AlphabetModel");
-const alphaSeed = require("./Models/alphabetseed");
 
 // Connect to mongodb
-mongoose.connect("mongodb://localhost:27017/DemoDay", {
+mongoose.connect("mongodb://localhost:27017/React", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
@@ -37,7 +32,6 @@ app.use(
 
 // Use the initilaised routers
 app.use("/api/alphabet", alphabetRouter);
-app.use("/api/user", userRouter);
 
 // Start listening
 app.listen(port, () =>

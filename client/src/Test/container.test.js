@@ -5,30 +5,28 @@ export const Container = () => {
     //1: get the value when Button clicked
 
     const handleClickLetter = (e) => {
-        const letter = e.currentTarget.value
-        console.log(letter);
-    }
+        const input = e.currentTarget.value
+        console.log("letter:", input);
     // 2: Use alphabet value to filter from fetched words and display
     // API call
-    fetch('http://localhost:9000/api/alphabet/words/${letter}', {
-        method: "GET",
-        headers: {
-            "Content-Type": "application/json",
-        },
-    })
-        .then((response) => {
-            return response.json();
-        })
-        .then((getWords) => {
-            setWordsList(getWords.data);
-        });
-}, [getWords]
-);
-
+    
+    const getWordsByLetter = () => {
+            fetch('http://localhost:9000/api/alphabet/words/{input}', {
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                data: JSON.stringify(),
+            }).then((response) => {
+                    console.log("response:", response)
+                    return response.json()
+                });
+        }
     }
-return (
-    <div>
-        <ListTest handleClick={handleClickLetter} />
-    </div>
-);
-};
+       
+    return (
+            <div>
+                <ListTest handleClick={handleClickLetter} />
+            </div>
+        );
+    };

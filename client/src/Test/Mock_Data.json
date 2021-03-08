@@ -1,0 +1,6 @@
+
+
+const words = [
+    { "letter": "A", "word1": "apple", "word2": "ant" },
+    { "letter": "B", "word1": "boy", "word2": "bee" },
+];

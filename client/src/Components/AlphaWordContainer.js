@@ -3,13 +3,14 @@ import { AddWords } from "./Addwords";
 import { EditWords } from "./Editwords";
 import { DeleteWord } from "./Deletewords";
 import { ListWords } from "./ListWords";
+import { Alphabet } from "./Play";
 import { BrowserRouter as Router, Link, Switch, Route } from "react-router-dom";
 
 const AlphaWordContainer = () => {
     /* set up state variables to handle changes - added words */
     const [wordslist, setWordsList] = useState([]);
-    const [updateWord, setUpdateWord] = useState({name: "", alphabetName: ""});
-    const [deleteWord, setDeleteWord] = useState({name: "",alphabetName: ""});
+    const [updateWord, setUpdateWord] = useState({ name: "", alphabetName: "" });
+    const [deleteWord, setDeleteWord] = useState({ name: "", alphabetName: "" });
 
     /*Adding New words*/
     const handleWordsSubmit = (name, alphabetName) => {
@@ -42,7 +43,7 @@ const AlphaWordContainer = () => {
                 setWordsList(wordslist.data);
             });
     }, [wordslist]);
-    
+
     /*Editing words*/
     //  When you click on a word on the list - find the index(unique key identifying the word)
     const handleWordClick = (wordIndex) => {
@@ -91,23 +92,24 @@ const AlphaWordContainer = () => {
     return (
         <Router>
             <div>
-                <ListWords words={wordslist} handleClick={handleWordClick} />
-                {/* <Link to="/ListWords">List</Link> */}
+                <Alphabet />
                 <Link to="/AddWords">Add</Link>
                 <Link to="/EditWords">Edit</Link>
                 <Link to="/DeleteWord">Delete</Link>
+                <Link to="/ListWords">List</Link>
+                <ListWords words={wordslist} handleClick={handleWordClick} />
                 <Switch>
                     <Route path="/AddWords">
                         <AddWords submit={handleWordsSubmit} />
                     </Route>
-                    {/* <Route path="/ListWords">
-                        <ListWords words={wordslist} />
-                    </Route> */}
                     <Route path="/EditWords">
                         <EditWords submit={handleEditWord} word={updateWord} />
                     </Route>
                     <Route path="/DeleteWord">
                         <DeleteWord submit={handleDeleteWord} word={deleteWord} />
+                    </Route>
+                    <Route path="/ListWords">
+                        <ListWords words={wordslist} />
                     </Route>
                 </Switch>
             </div>

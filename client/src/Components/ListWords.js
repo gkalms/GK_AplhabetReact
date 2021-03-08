@@ -5,7 +5,7 @@ const ListWords = (props) => {
       <ul>
         {props.words.map((el, index) => (
           <li key={index} onClick={() => props.handleClick(index)}>
-            name: {el.name} - alphabetName: {el.alphabetName}
+            Letter: {el.alphabetName} - Word: {el.name}
           </li>
         ))}
       </ul>

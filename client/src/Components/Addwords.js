@@ -3,12 +3,12 @@ import React, { useState } from 'react';
 const AddWords = (props) => {
 
   const [FormState, setFormState] = useState({
-    name: "",
-    alphabetName: ""
+    word: "",
+    letter: ""
   })
 
   const handleChange = (e) => {
-    
+
     const newState = { ...FormState }
     newState[e.target.name] = e.target.value;
     setFormState(newState);
@@ -16,25 +16,22 @@ const AddWords = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    props.submit(FormState.name, FormState.alphabetName);
+    props.submit(FormState.word, FormState.letter);
   }
 
   return (
     <div>
       <h2>Add word</h2>
-      
+
       <form onSubmit={handleSubmit}>
-
         <label>
-          Name
-        <input name="name" value={FormState.name} onChange={handleChange}></input>
+          Letter
+        <input name="letter" value={FormState.alphabetName} onChange={handleChange}></input>
         </label>
-
         <label>
-          Alphabet
-        <input name="alphabetName" value={FormState.alphabetName} onChange={handleChange}></input>
+          Word
+        <input name="word" value={FormState.name} onChange={handleChange}></input>
         </label>
-
         <button type="submit">
           Submit
       </button>

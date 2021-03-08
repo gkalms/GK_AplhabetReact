@@ -26,17 +26,14 @@ const EditWords = (props) => {
       <div>
         <h2>Update word</h2>
         <form onSubmit={handleSubmit}>
-
-          <label>
-            Name
-        <input name="name" value={formState.name} onChange={handleChange}></input>
-          </label>
-
-          <label>
-            Alphabet
+        <label>
+            Letter
         <input name="alphabetName" value={formState.alphabetName} onChange={handleChange}></input>
           </label>
-
+          <label>
+            Word
+        <input name="name" value={formState.name} onChange={handleChange}></input>
+          </label>
           <button type="submit">
             Update
       </button>

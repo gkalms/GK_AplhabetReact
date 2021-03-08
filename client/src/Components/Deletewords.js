@@ -12,7 +12,7 @@ const DeleteWord = (props) => {
   }, [props.word]);
 
   const handleChange = (e) => {
-    const newState = {...formState }
+    const newState = { ...formState }
     newState[e.target.name] = e.target.value;
     setFormState(newState);
   }
@@ -22,27 +22,24 @@ const DeleteWord = (props) => {
     props.submit(formState);
   };
 
-    return (
-      <div>
-        <h2>Delete word</h2>
-        <form onSubmit={handleSubmit}>
-
-          <label>
-            Name
-        <input name="name" value={formState.name} onChange={handleChange}></input>
-          </label>
-
-          <label>
-            Alphabet
+  return (
+    <div>
+      <h2>Delete word</h2>
+      <form onSubmit={handleSubmit}>
+        <label>
+          Letter
         <input name="alphabetName" value={formState.alphabetName} onChange={handleChange}></input>
-          </label>
-
-          <button type="submit">
-            Delete
+        </label>
+        <label>
+          Word
+        <input name="name" value={formState.name} onChange={handleChange}></input>
+        </label>
+        <button type="submit">
+          Delete
       </button>
-        </form>
-      </div>
-    );
-  };
+      </form>
+    </div>
+  );
+};
 
-  export { DeleteWord };
+export { DeleteWord };

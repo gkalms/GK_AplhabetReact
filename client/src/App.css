@@ -6,9 +6,30 @@
   width: 10px;
 }
 
-/* a {
+a {
   color: blueviolet  ;
   background-color: transparent;
   margin: 100px 10px;
   font-size: 20px;
-} */
+}
+
+a:hover {
+  color: hotpink;
+}
+
+label {
+  margin: 1px;
+  font-weight: 600;
+}
+
+input {
+  margin: 2px 10px;
+}
+
+button {
+  font-weight: 800;
+}
+
+#row3 {
+
+}

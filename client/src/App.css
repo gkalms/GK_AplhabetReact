@@ -1,3 +1,12 @@
+
+#play {
+  /* display: flex; */
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+}
+
 .btn {
   font-size: 20px;
   padding: 10px 60px;
@@ -30,6 +39,7 @@ button {
   font-weight: 800;
 }
 
-#row3 {
-
+li {
+  font-style: italic;
+  list-style-type: circle;
 }

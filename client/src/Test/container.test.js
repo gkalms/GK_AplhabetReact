@@ -3,8 +3,7 @@ import { ListTest } from "./List.test";
 export const Container = () => {
     
     const getWordsByLetter = (input) => {
-
-            fetch('http://localhost:9000/api/alphabet/words/input', {
+            fetch(`http://localhost:9000/api/alphabet/words/${input}`, {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",

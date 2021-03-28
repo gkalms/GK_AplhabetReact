@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
+import { BrowserRouter as Router, Link, Switch, Route } from "react-router-dom";
+
 import { AddWords } from "./Addwords";
 import { EditWords } from "./Editwords";
 import { DeleteWord } from "./Deletewords";
 import { ListWords } from "./ListWords";
 import { Alphabet } from "./Play";
-import { BrowserRouter as Router, Link, Switch, Route } from "react-router-dom";
+
 
 const AlphaWordContainer = () => {
     /* set up state variables to handle changes - added words */

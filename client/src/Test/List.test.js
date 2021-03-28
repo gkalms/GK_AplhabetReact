@@ -43,7 +43,7 @@ export const ListTest = (props) => {
                     <Button variant="secondary" id="clear">Clear</Button>
                     <Button variant="secondary" id="quit">Quit</Button>
                 </div>
-                <p>Output from targetted words</p>
+                <p></p>
             </form>
         </div>
     );

@@ -10,8 +10,9 @@ export const Container = () => {
                 },
                 data: JSON.stringify(),
             }).then((response) => {
-                    console.log("Log 3 Response:", response)
+                    // console.log("Log 3 Response:", response.json())
                     return response.json()
+            
                 });
         }
 
